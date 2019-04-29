@@ -1,0 +1,361 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Century Gothic";
+	panose-1:2 11 5 2 2 2 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-NZ link="#0563C1" vlink="#954F72">
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:18.0pt;line-height:107%;font-family:"Century Gothic",sans-serif'>Garage
+door opener with video streaming</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
+style='font-family:"Century Gothic",sans-serif'>Setting up Apache, PHP and
+Motion</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Allow
+WinSCP to login as root to make file access easier:</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+nano /etc/ssh/sshd_config</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Remove
+the # and change:</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>PermitRootLogin
+yes</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>After
+activating the camera in raspi-config, test the camera</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>raspistill
+-o cam.jpg</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Install
+Apache and PHP7.0</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+apt-get install apache2 php7.0 libapache2-mod-php</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Install
+Motion and Dependencies</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+apt-get install motion</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+apt-get install libjpeg62</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Activate
+the official driver for the camera.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+modprobe bcm2835-v4l2</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Tell
+the Pi to activate the driver after any reboot</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+nano /etc/modules</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>#
+at the end of the file, add this line :</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>bcm2835-v4l2</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Set
+Camera Server as a daemon (background process) and start it automatically</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+nano /etc/default/motion</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>#
+in this file, search for start_motion_daemon and activate it</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>#
+start_motion_daemon=yes</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Copy
+the motion,conf file into /etc/motion/motion.conf</span></p>
+
+<p class=MsoNormal><i><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Notable
+changes from the default file:</span></i></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Daemon
+= OFF to ON</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>webcam_localhost
+= ON to OFF</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>stream_localhost
+ON to OFF</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>webcontrol_port
+8082</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>#
+careful! don't set the stream port the same as the web control port</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Now
+restart the motion service, start motion and see if you can see the webpage</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+service motion restart</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+motion</span></p>
+
+<p class=MsoNormal><a href="http://IP_address:8081"><span lang=EN-US
+style='font-family:"Century Gothic",sans-serif'>http://IP_address:8081</span></a></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>At
+this point, if you cannot see the page, or if sudo motion fails, try and
+reinstall motion</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+apt-get install motion</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Set
+motion permissions to log and pid folders</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+chown -R root:motion /var/log</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+chown -R root:motion /var/run</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>If
+motion isn’t starting properly when rebooting, add</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+motion</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>to</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+nano /etc/rc.local</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
+style='font-family:"Century Gothic",sans-serif'>GPIO Relay Setup</span></b></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><img width=309 height=345 src="instructions_files/image001.jpg"
+align=left hspace=12 alt="Related image"><span lang=EN-US style='font-family:
+"Century Gothic",sans-serif'>Connect the relay trigger to pin 11 (GPIO 17)
+which is coded as pin 0</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Test
+the relay</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>gpio
+mode 0 out</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>gpio
+write 0 1</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>gpio
+write 0 0</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
+style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
+style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
+style='font-family:"Century Gothic",sans-serif'>Setting up the Webpage</span></b></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Set
+up /var/www as the default directory</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>sudo
+nano /etc/apache2/sites-available/000-default.conf</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>change
+/var/www/html to /var/www</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Remove
+html folder from /var/www</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>Copy
+index.php into /var/www</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:18.0pt'><span lang=EN-US
+style='font-family:"Century Gothic",sans-serif'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
