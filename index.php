@@ -62,7 +62,7 @@ if(isset($_GET['trigger']) && $_GET['trigger'] == 1) {
 <br>
 <br>
 <!--Replace RaspiIP with your IP-->
-<img class="center" style="-webkit-user-select: none; width:100%;" src="http://192.168.178.50:8081/">
+<img class="center" style="-webkit-user-select: none; width:100%;" src="http://192.168.178.49:8081/">
 
 </body>
 <footer class="w3-bottom">
