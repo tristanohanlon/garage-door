@@ -2,6 +2,9 @@
 Automatic garage door opener which open via a php page. Uses a raspbery pi 3B and a pi camera for live video feed.
 Garage door opener with video streaming
 
+# Errors
+If the camera doesn't display on the webpage, look at the IP addess in the php file and check that it matches the IP if the device
+
 # Setting up Apache, PHP and Motion
 
 Allow WinSCP to login as root to make file access easier:
